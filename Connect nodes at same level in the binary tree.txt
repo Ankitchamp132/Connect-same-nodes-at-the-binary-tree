@@ -1,0 +1,32 @@
+void connect(Node *root)
+    {
+       struct Node *parent,*childhead,*child;
+       parent=root;
+       childhead=child=NULL;
+       while(parent!=NULL){
+           while(parent!=NULL){
+               if(parent->left!=NULL){
+                   if(childhead==NULL){
+                       childhead=parent->left;
+                   }
+                   else{
+                       child->nextRight=parent->left;
+                   }
+                   child=parent->left;
+               }
+               if(parent->right!=NULL){
+                   if(childhead==NULL){
+                       childhead=parent->right;
+                   }
+                   else{
+                       child->nextRight=parent->right;
+                   }
+                   child=parent->right;
+               }
+               parent=parent->nextRight;
+           }
+           parent=childhead;
+           childhead=child=NULL;
+       }
+       
+    }
